@@ -3,7 +3,7 @@ const path = require("node:path");
 
 const pathsToCheck = path.join(__dirname, "/secret-folder");
 
-async function ddd() {
+async function print() {
   try {
     const files = await fs.readdir(pathsToCheck);
     for (const file of files) {
@@ -24,4 +24,5 @@ async function ddd() {
     console.error(err);
   }
 }
-ddd();
+
+print();
