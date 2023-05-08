@@ -1,13 +1,13 @@
-const fs = require("node:fs/promises");
-const path = require("node:path");
+const fs = require('node:fs/promises');
+const path = require('node:path');
 
-const pathsToCheck = path.join(__dirname, "/secret-folder");
+const pathsToCheck = path.join(__dirname, '/secret-folder');
 
 async function print() {
   try {
     const files = await fs.readdir(pathsToCheck);
     for (const file of files) {
-      const name = path.join(__dirname, "/secret-folder", file);
+      const name = path.join(__dirname, '/secret-folder', file);
       const stat = await fs.stat(name);
       if (stat.isFile()) {
         console.log(
